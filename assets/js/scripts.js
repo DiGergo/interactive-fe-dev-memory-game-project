@@ -1,5 +1,5 @@
 function playerPrompt() {
-  var txt;
+  let txt;
   player = prompt("Please enter your name: ", "");
   txt = "Good luck " + player + " !";
   document.getElementById("player-name").innerHTML = txt;
@@ -42,9 +42,23 @@ const blueField = document.querySelector("#blue-field");
 const yellowField = document.querySelector("#yellow-field");
 const greenField = document.querySelector("#green-field");
 
+let modal = document.getElementById("myModal");
+let btn = document.getElementById("modal");
+let span = document.getElementsByClassName("close")[0];
 
+btn.onclick = function() {
+  modal.style.display = "block";
+};
 
+span.onclick = function() {
+  modal.style.display = "none";
+};
 
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 
 
 function play() {

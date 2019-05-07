@@ -4,16 +4,10 @@
 
 body {
     background-color: #D69A00;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
     font-family: "schoolbell", sans-serif;
 }
+
+
 
 .logo {
     font-size: 3em;
@@ -41,40 +35,75 @@ a:hover {
 
 /*------------------------------------------------BUTTONS */
 
-.game-buttons{
-  text-align: center;
-  padding-bottom: 25px;
+.game-buttons {
+    text-align: center;
+    padding-bottom: 25px;
 }
 
 .btn {
-  font-size: 25px;
-  background-color: #C67517;
-  font-family: "schoolbell", sans-serif;
-  border-radius: 45%;
-  text-decoration: none;
+    font-size: 25px;
+    background-color: #C67517;
+    border-radius: 45%;
+    text-decoration: none;
 }
 
 .btn:hover {
-  background-color: #af6618;
+    background-color: #af6618;
 }
 
 #player-name {
-  font-family: "schoolbell", sans-serif;
-  font-size: 22px;
-  margin-top: 15px;
+    font-size: 22px;
+    margin-top: 15px;
 }
 
 .highscores {
-  text-align: center;
-  padding-bottom: 5px;
-  margin-top: -5px;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-top: -5px;
 }
 
 #highscore {
-  font-size: 18px;
-  font-family: "schoolbell", sans-serif;
+    font-size: 18px;
 }
 
+
+/* ------------------------------------------- MODAL */
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
 /*----------------------------------------------GAME-FIELD */
@@ -90,7 +119,6 @@ a:hover {
     height: 50px;
     background-color: #D69A00;
     color: black;
-    font-family: "schoolbell", sans-serif;
     text-align: center;
 }
 
@@ -105,7 +133,6 @@ a:hover {
     height: 50px;
     background-color: #D69A00;
     color: black;
-    font-family: "schoolbell", sans-serif;
     text-align: center;
 }
 
