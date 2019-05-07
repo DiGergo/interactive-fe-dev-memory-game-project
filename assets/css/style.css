@@ -39,6 +39,43 @@ a:hover {
     text-align: center;
 }
 
+/*------------------------------------------------BUTTONS */
+
+.game-buttons{
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.btn {
+  font-size: 25px;
+  background-color: #C67517;
+  font-family: "schoolbell", sans-serif;
+  border-radius: 45%;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #af6618;
+}
+
+#player-name {
+  font-family: "schoolbell", sans-serif;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.highscores {
+  text-align: center;
+  padding-bottom: 30px;
+  margin-top: -5px;
+}
+
+#higscore {
+  font-size: 22px;
+}
+
+
+
 /*----------------------------------------------GAME-FIELD */
 
 #moves-count {
