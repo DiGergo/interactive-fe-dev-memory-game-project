@@ -24,8 +24,58 @@
 </head>
 
 <body>
-    
-    
+
+    <header class="container-fluid">
+        <div class="col-md-5 logo">
+            <h1><a href=index.html>MEMORY GAME</a></h1>
+        </div>
+        <div class="col-md-7">
+            <div class="row">
+                <h3 class="rules"><a href="#">Click here for rules!</a></h3>
+            </div>
+
+        </div>
+    </header>
+
+
+    <section class="container-fluid ">
+        <div class="row">
+            <div class="col-md-6 game-buttons">
+                <button type="button" onclick="playerPrompt()" class="btn" id="start">New Game</button>
+                <p id="player-name">Press the button to play the game!</p>
+            </div>
+            <div class="col-md-6">
+                <div class="highscores">
+                    <h2></h2>
+                    <div id="highscore">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col game">
+                <div id="game-field">
+                    <div id="moves-count">
+                        <h2>Move: </h2>
+                        <div id="moves">0</div>
+                    </div>
+                    <div id="red-field"></div>
+                    <div id="blue-field"></div>
+                    <div id="yellow-field"></div>
+                    <div id="green-field"></div>
+                    <div id="lifes-count">
+                        <h2 class="lifes-header">Lifes left: </h2>
+                        <div id="lifes-left">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="assets/js/scripts.js"></script>
 </body>
 

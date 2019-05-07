@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Schoolbell');
+
+/*-----------------------------------------------HEADER */
+
+body {
+    background-color: #D69A00;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "schoolbell", sans-serif;
+}
+
+.logo {
+    font-size: 3em;
+}
+
+.rules {
+    text-align: right;
+    margin: 5px 5px 0 0;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #af6618;
+}
+
+
+.good-wish {
+    font-size: 5em;
+    text-align: center;
+}
+
+/*----------------------------------------------GAME-FIELD */
+
+#moves-count {
+    position: absolute;
+    margin: 0 0 0 -100px;
+}
+
+#moves {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #D69A00;
+    color: black;
+    font-family: "schoolbell", sans-serif;
+    text-align: center;
+}
+
+#lifes-count {
+    position: absolute;
+    margin: 0 0 0 530px;
+}
+
+#lifes-left {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-color: #D69A00;
+    color: black;
+    font-family: "schoolbell", sans-serif;
+    text-align: center;
+}
+
+.lifes-header {
+    width: 200px;
+}
+
+#game-field {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin: auto;
+    padding: 0;
+
+}
+
+#red-field {
+    width: 245px;
+    height: 245px;
+    position: absolute;
+    margin: 245px 0 0 245px;
+    border-style: solid;
+    border-width: 6px;
+    padding: 0;
+    background-color: #A70000;
+}
+
+#blue-field {
+    width: 245px;
+    height: 245px;
+    position: absolute;
+    margin: 245px 245px 0 0;
+    padding: 0;
+    background-color: #313A89;
+    border-style: solid;
+    border-width: 6px;
+}
+
+#yellow-field {
+    width: 245px;
+    height: 245px;
+    position: absolute;
+    margin: 0 0 245px 0;
+    padding: 0;
+    background-color: #DFE300;
+    border-style: solid;
+    border-width: 6px;
+}
+
+#green-field {
+    width: 245px;
+    height: 245px;
+    position: absolute;
+    margin: 0 0 0 245px;
+    padding: 0;
+    background-color: #008E06;
+    border-style: solid;
+    border-width: 6px;
+}
