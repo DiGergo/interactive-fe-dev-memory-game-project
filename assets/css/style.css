@@ -60,18 +60,19 @@ a:hover {
 
 #player-name {
   font-family: "schoolbell", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   margin-top: 15px;
 }
 
 .highscores {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 5px;
   margin-top: -5px;
 }
 
-#higscore {
-  font-size: 22px;
+#highscore {
+  font-size: 18px;
+  font-family: "schoolbell", sans-serif;
 }
 
 

@@ -48,7 +48,7 @@ const greenField = document.querySelector("#green-field");
 
 
 function play() {
-  highScore.innerHTML = localStorage.getItem(player) == null ? 0 : localStorage.getItem(player);
+  highScore.innerHTML = localStorage.getItem(player) == null ? "Your best score is : " + 0 : "Your best score is : " + localStorage.getItem(player);
   console.log(player);
   win = false;
   order = [];
