@@ -275,5 +275,7 @@ function restart() {
     clearInterval(intervalId);
     play();
     lifes.innerHTML = "3";
+    moves.innerHTML = "1";
+    turn = 1;
   });
 }
