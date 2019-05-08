@@ -268,7 +268,7 @@ function gameOver() {
     on = false;
     win = false;
     clearInterval();
-    highScore.innerHTML = localStorage.getItem(player);
+    highScore.innerHTML = "Your best score is: " + localStorage.getItem(player);
 
   }
 }
