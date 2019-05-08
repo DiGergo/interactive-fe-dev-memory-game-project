@@ -73,7 +73,7 @@ function play() {
   lifesLeft = 3;
   good = true;
 
-  for (var i = 0; i < 30; i++) {
+  for (var i = 0; i < 50; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   compTurn = true;
@@ -84,7 +84,6 @@ function play() {
 function gameTurn() {
   on = false;
   if (flash == turn) {
-
     clearInterval(intervalId);
     compTurn = false;
     clearColor();
@@ -104,7 +103,6 @@ function gameTurn() {
 }
 
 function one() {
-
   if (noise) {
     let audio = document.getElementById("sound1");
     audio.play();
@@ -114,7 +112,6 @@ function one() {
 }
 
 function two() {
-
   if (noise) {
     let audio = document.getElementById("sound2");
     audio.play();
@@ -124,7 +121,6 @@ function two() {
 }
 
 function three() {
-
   if (noise) {
     let audio = document.getElementById("sound3");
     audio.play();
@@ -134,7 +130,6 @@ function three() {
 }
 
 function four() {
-
   if (noise) {
     let audio = document.getElementById("sound4");
     audio.play();
@@ -214,18 +209,18 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 20 && good) {
+  if (playerOrder.length == 50 && good) {
     winGame();
   }
 
   if (good == false) {
+    on = false;
     flashColor();
     lifesLeft--;
     lifes.innerHTML = lifesLeft;
     setTimeout(() => {
       if (lifesLeft === 0) {
         gameOver();
-
       }
       else {
         clearColor();
@@ -269,6 +264,5 @@ function gameOver() {
     win = false;
     clearInterval();
     highScore.innerHTML = "Your best score is: " + localStorage.getItem(player);
-
   }
 }
