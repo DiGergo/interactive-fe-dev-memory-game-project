@@ -194,6 +194,14 @@ a:hover {
     border-width: 6px;
 }
 
+#restart {
+    width: 25px;
+    margin-left: 500px;
+    margin-top: 460px;
+    display: none;
+}
+
+
 
 /*--------------------------------------------MEDIA QUERIES  */
 

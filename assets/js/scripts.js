@@ -63,7 +63,6 @@ window.onclick = function(event) {
 
 function play() {
   highScore.innerHTML = localStorage.getItem(player) == null ? "Your best score is : " + 0 : "Your best score is : " + localStorage.getItem(player);
-  console.log(player);
   win = false;
   order = [];
   playerOrder = [];
@@ -77,7 +76,6 @@ function play() {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   compTurn = true;
-
   intervalId = setInterval(gameTurn, 700);
 }
 
@@ -211,6 +209,7 @@ function check() {
 
   if (playerOrder.length == 50 && good) {
     winGame();
+    
   }
 
   if (good == false) {
@@ -221,6 +220,7 @@ function check() {
     setTimeout(() => {
       if (lifesLeft === 0) {
         gameOver();
+        restart();
       }
       else {
         clearColor();
@@ -265,4 +265,15 @@ function gameOver() {
     clearInterval();
     highScore.innerHTML = "Your best score is: " + localStorage.getItem(player);
   }
+}
+
+
+function restart() {
+  let restartGame = document.getElementById("restart");
+  restartGame.style.display = "inline-table";
+  restartGame.addEventListener("click", (event) => {
+    clearInterval(intervalId);
+    play();
+    lifes.innerHTML = "3";
+  });
 }
