@@ -7,15 +7,13 @@ body {
     font-family: "schoolbell", sans-serif;
 }
 
-
-
 .logo {
     font-size: 3em;
 }
 
 .rules {
     text-align: right;
-    margin: 5px 5px 0 0;
+    margin: 20px 5px 0 0;
 }
 
 a {
@@ -121,6 +119,7 @@ a:hover {
     background-color: #D69A00;
     color: black;
     text-align: center;
+    font-size: 30px;
 }
 
 #lifes-count {
@@ -135,6 +134,7 @@ a:hover {
     background-color: #D69A00;
     color: black;
     text-align: center;
+    font-size: 30px;
 }
 
 .lifes-header {

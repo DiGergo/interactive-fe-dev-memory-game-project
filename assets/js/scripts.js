@@ -1,29 +1,11 @@
-function playerPrompt() {
-  let txt;
-  player = prompt("Please enter your name: ", "");
-  txt = "Good luck " + player + " !";
-  document.getElementById("player-name").innerHTML = txt;
+/* global localStorage */
 
-}
 let player;
 let start = document.querySelector("#start");
-let playerName = document.querySelector("#player-name");
 let moves = document.querySelector("#moves");
 let highScore = document.querySelector("#highscore");
 let lifes = document.querySelector("#lifes-left");
 let lifesLeft;
-
-
-
-start.addEventListener('click', (event) => {
-  lifes.innerHTML = "3";
-  moves.innerHTML = "1";
-  play();
-});
-
-
-
-window.localStorage;
 let order = [];
 let playerOrder = [];
 let flash; //lifes
@@ -36,11 +18,12 @@ let noise = true;
 let on = false;
 let win;
 
-const turnCounter = document.querySelector("#lifes");
 const redField = document.querySelector("#red-field");
 const blueField = document.querySelector("#blue-field");
 const yellowField = document.querySelector("#yellow-field");
 const greenField = document.querySelector("#green-field");
+
+//---------------------------------------------------------------MODAL 
 
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("modal");
@@ -60,8 +43,27 @@ window.onclick = function(event) {
   }
 };
 
+//------------------------------------------Game starts, asking for player name
 
-function play() {
+const playerPrompt = () => {
+  let txt;
+  player = prompt("Please enter your name: ", "");
+  txt = "Good luck " + player + " !";
+  document.getElementById("player-name").innerHTML = txt;
+};
+
+//-------------- Sets moves and lifes then play's the game
+
+start.addEventListener('click', (event) => {
+  lifes.innerHTML = "3";
+  moves.innerHTML = "1";
+  play();
+});
+
+/* -------------------------------Play function checks if the player played allready or not with the local storage and assigns the previous score if he did.
+generates the array for the game logic, sets the function execution duration.*/
+
+const play = () => {
   highScore.innerHTML = localStorage.getItem(player) == null ? "Your best score is : " + 0 : "Your best score is : " + localStorage.getItem(player);
   win = false;
   order = [];
@@ -77,7 +79,9 @@ function play() {
   }
   compTurn = true;
   intervalId = setInterval(gameTurn, 700);
-}
+};
+
+/* ------------Gameturn   */
 
 function gameTurn() {
   on = false;
@@ -254,7 +258,7 @@ function winGame() {
 
 function gameOver() {
   thisGameResult = localStorage.getItem(player);
-  thisGameResult = parseInt(thisGameResult);
+  thisGameResult = Number(thisGameResult);
   if (turn > thisGameResult || localStorage.getItem(player) == null) {
     localStorage.setItem(player, turn);
   }
@@ -264,7 +268,8 @@ function gameOver() {
     win = false;
     clearInterval();
     highScore.innerHTML = "Your best score is: " + localStorage.getItem(player);
-  }
+    document.getElementById("player-name").innerHTML = "You Lost! Press new game or replay.";
+    }
 }
 
 
