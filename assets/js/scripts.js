@@ -74,7 +74,7 @@ const play = () => {
   lifesLeft = 3;
   good = true;
 
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 30; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   compTurn = true;
@@ -233,7 +233,7 @@ const check = () => {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
   //Checks if the playedOrder length is 50 AND good
-  if (playerOrder.length == 50 && good) {
+  if (playerOrder.length == 30 && good) {
     winGame();
   }
   // This happens if the order in no good
