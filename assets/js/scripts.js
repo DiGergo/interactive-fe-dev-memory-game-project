@@ -83,7 +83,7 @@ const play = () => {
 
 /* ------------Gameturn function flashes the colors  */
 
-function gameTurn() {
+const gameTurn = () => {
   on = false;
   if (flash == turn) {
     clearInterval(intervalId);
@@ -102,69 +102,69 @@ function gameTurn() {
       flash++;
     }, 100);
   }
-}
+};
 
 //--------------------------if one is the next field this function is running
 
-function one() {
+const one =() => {
   if (noise) {
     let audio = document.getElementById("sound1");
     audio.play();
   }
   noise = true;
   redField.style.backgroundColor = "red";
-}
+};
 
 //--------------------------if two is the next field this function is running
 
-function two() {
+const two = () => {
   if (noise) {
     let audio = document.getElementById("sound2");
     audio.play();
   }
   noise = true;
   blueField.style.backgroundColor = "blue";
-}
+};
 
 //--------------------------if three is the next field this function is running
 
-function three() {
+const three = () => {
   if (noise) {
     let audio = document.getElementById("sound3");
     audio.play();
   }
   noise = true;
   yellowField.style.backgroundColor = "#e8ff99";
-}
+};
 
 //--------------------------if four is the next field this function is running
 
-function four() {
+const four = () => {
   if (noise) {
     let audio = document.getElementById("sound4");
     audio.play();
   }
   noise = true;
   greenField.style.backgroundColor = "#6aff4c";
-}
+};
 
 //-----------------------------------Theese are the original colors of the fields
 
-function clearColor() {
+const clearColor = () => {
   redField.style.backgroundColor = "#A70000";
   blueField.style.backgroundColor = "#313A89";
   yellowField.style.backgroundColor = "#d3be1d";
   greenField.style.backgroundColor = "#008E06";
-}
+};
 
 //-----------------------------------Theese are the brighter colors of the fields
 
-function flashColor() {
+const flashColor = () => {
   redField.style.backgroundColor = "red";
   blueField.style.backgroundColor = "blue";
   yellowField.style.backgroundColor = "#e8ff99";
   greenField.style.backgroundColor = "#6aff4c";
-}
+};
 
 //-----------------------This function pushes the number 1 into the playerOrder array then goes on to check function
 
@@ -228,7 +228,7 @@ greenField.addEventListener('click', (event) => {
 
 /*  This function checks if the color we clicked on is the right one or not     */
 
-function check() {
+const check = () => {
   //Checks if the playerOrder is the same as the order
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
@@ -259,7 +259,7 @@ function check() {
     }, 700);
     noise = false;
   }
-
+  //If all the clicks were good but didn't win yet
   if (turn == playerOrder.length && good && !win) {
     turn++;
     playerOrder = [];
@@ -269,17 +269,22 @@ function check() {
     intervalId = setInterval(gameTurn, 700);
   }
 
-}
+};
 
-function winGame() {
+//-------------------Win game function lightens up the colors and congratulates the player
+
+const winGame = () => {
   flashColor();
   on = false;
   win = true;
   document.getElementById("player-name").innerHTML = "You Won  " + player + "!!!";
   highScore.innerHTML = "Congratulations!!!";
-}
+};
 
-function gameOver() {
+/*--------------------Game over function uses the local storage of the browser to set and get the player
+scores , in case of loosing the game shows the highest achived score.*/
+
+const gameOver = () => {
   thisGameResult = localStorage.getItem(player);
   thisGameResult = Number(thisGameResult);
   if (turn > thisGameResult || localStorage.getItem(player) == null) {
@@ -293,10 +298,11 @@ function gameOver() {
     highScore.innerHTML = "Your best score is: " + localStorage.getItem(player);
     document.getElementById("player-name").innerHTML = "You Lost! Press new game or replay.";
     }
-}
+};
 
+/*-----------------Restart function lets the player play the game again without entering his name again   */
 
-function restart() {
+const restart = () => {
   let restartGame = document.getElementById("restart");
   restartGame.style.display = "inline-table";
   restartGame.addEventListener("click", (event) => {
@@ -306,4 +312,4 @@ function restart() {
     moves.innerHTML = "1";
     turn = 1;
   });
-}
+};
