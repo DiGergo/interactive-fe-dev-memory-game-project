@@ -81,7 +81,7 @@ const play = () => {
   intervalId = setInterval(gameTurn, 700);
 };
 
-/* ------------Game functions  */
+/* ------------Gameturn function flashes the colors  */
 
 function gameTurn() {
   on = false;
@@ -104,6 +104,8 @@ function gameTurn() {
   }
 }
 
+//--------------------------if one is the next field this function is running
+
 function one() {
   if (noise) {
     let audio = document.getElementById("sound1");
@@ -112,6 +114,8 @@ function one() {
   noise = true;
   redField.style.backgroundColor = "red";
 }
+
+//--------------------------if two is the next field this function is running
 
 function two() {
   if (noise) {
@@ -122,6 +126,8 @@ function two() {
   blueField.style.backgroundColor = "blue";
 }
 
+//--------------------------if three is the next field this function is running
+
 function three() {
   if (noise) {
     let audio = document.getElementById("sound3");
@@ -130,6 +136,8 @@ function three() {
   noise = true;
   yellowField.style.backgroundColor = "#e8ff99";
 }
+
+//--------------------------if four is the next field this function is running
 
 function four() {
   if (noise) {
@@ -140,6 +148,8 @@ function four() {
   greenField.style.backgroundColor = "#6aff4c";
 }
 
+//-----------------------------------Theese are the original colors of the fields
+
 function clearColor() {
   redField.style.backgroundColor = "#A70000";
   blueField.style.backgroundColor = "#313A89";
@@ -147,12 +157,16 @@ function clearColor() {
   greenField.style.backgroundColor = "#008E06";
 }
 
+//-----------------------------------Theese are the brighter colors of the fields
+
 function flashColor() {
   redField.style.backgroundColor = "red";
   blueField.style.backgroundColor = "blue";
   yellowField.style.backgroundColor = "#e8ff99";
   greenField.style.backgroundColor = "#6aff4c";
 }
+
+//-----------------------This function pushes the number 1 into the playerOrder array then goes on to check function
 
 redField.addEventListener('click', (event) => {
   if (on) {
@@ -167,6 +181,8 @@ redField.addEventListener('click', (event) => {
   }
 });
 
+//-----------------------This function pushes the number 2 into the playerOrder array then goes on to check function
+
 blueField.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(2);
@@ -179,6 +195,8 @@ blueField.addEventListener('click', (event) => {
     }
   }
 });
+
+//-----------------------This function pushes the number 3 into the playerOrder array then goes on to check function
 
 yellowField.addEventListener('click', (event) => {
   if (on) {
@@ -193,6 +211,8 @@ yellowField.addEventListener('click', (event) => {
   }
 });
 
+//-----------------------This function pushes the number 4 into the playerOrder array then goes on to check function
+
 greenField.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(4);
@@ -206,20 +226,23 @@ greenField.addEventListener('click', (event) => {
   }
 });
 
-function check() {
+/*  This function checks if the color we clicked on is the right one or not     */
 
+function check() {
+  //Checks if the playerOrder is the same as the order
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
-
-  if (playerOrder.length == 3 && good) {
+  //Checks if the playedOrder length is 50 AND good
+  if (playerOrder.length == 50 && good) {
     winGame();
   }
-
+  // This happens if the order in no good
   if (good == false) {
     on = false;
     flashColor();
     lifesLeft--;
     lifes.innerHTML = lifesLeft;
+    //Checks if there are lifes left
     setTimeout(() => {
       if (lifesLeft === 0) {
         gameOver();
@@ -234,7 +257,6 @@ function check() {
         intervalId = setInterval(gameTurn, 700);
       }
     }, 700);
-
     noise = false;
   }
 
