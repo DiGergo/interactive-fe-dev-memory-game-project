@@ -43,7 +43,7 @@ window.onclick = function(event) {
   }
 };
 
-//------------------------------------------Game starts, asking for player name
+//------------------------------------------Asking for player name, trigerred by New Game button
 
 const playerPrompt = () => {
   let txt;
@@ -81,7 +81,7 @@ const play = () => {
   intervalId = setInterval(gameTurn, 700);
 };
 
-/* ------------Gameturn   */
+/* ------------Game functions  */
 
 function gameTurn() {
   on = false;
@@ -211,9 +211,8 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 50 && good) {
+  if (playerOrder.length == 3 && good) {
     winGame();
-    
   }
 
   if (good == false) {
@@ -254,6 +253,8 @@ function winGame() {
   flashColor();
   on = false;
   win = true;
+  document.getElementById("player-name").innerHTML = "You Won  " + player + "!!!";
+  highScore.innerHTML = "Congratulations!!!";
 }
 
 function gameOver() {
