@@ -52,7 +52,7 @@ const playerPrompt = () => {
   document.getElementById("player-name").innerHTML = txt;
 };
 
-//-------------- Sets moves and lifes then play's the game
+//-------------- Sets moves and lifes then starts the game
 
 start.addEventListener('click', (event) => {
   lifes.innerHTML = "3";
@@ -73,24 +73,27 @@ const play = () => {
   turn = 1;
   lifesLeft = 3;
   good = true;
-
+  
+  // Pushes the numbers into the order[], these numbers are used to flash the fields
   for (var i = 0; i < 30; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
+  // Starts the game and sets the time interval to 700ms for the gameTurn function
   compTurn = true;
   intervalId = setInterval(gameTurn, 700);
 };
 
-/* ------------Gameturn function flashes the colors  */
-
 const gameTurn = () => {
-  on = false;
-  if (flash == turn) {
-    clearInterval(intervalId);
+  on = false; // Stops the player from being able to click on any of the fields
+  if (flash == turn) { // If the computers turn its over (because all the colors has flash)
+    clearInterval(intervalId); //Clears the interval(stops the gameTurn function from being executed),
     compTurn = false;
     clearColor();
-    on = true;
+    on = true; // Enables the player to press the gamefield
   }
+  
+  /*--------------Computers turn, compares the order array to the flash (if flash = 0 then it takes the number from index 0 in order array )
+                  then executes the corresponding function (one/two/three/four)*/
 
   if (compTurn) {
     clearColor();
@@ -104,7 +107,7 @@ const gameTurn = () => {
   }
 };
 
-//--------------------------if one is the next field this function is running, playing the sound and changing the color of the field to red
+//--------------------------if one is the next item in the order array then this function is running, playing the sound and changing the color of the field to red
 
 const one =() => {
   if (noise) {
@@ -115,7 +118,7 @@ const one =() => {
   redField.style.backgroundColor = "red";
 };
 
-//--------------------------if two is the next field this function is running,  playing the sound and changing the color of the field to blue
+//--------------------------if two is the next item in the order array then this function is running,  playing the sound and changing the color of the field to blue
 
 const two = () => {
   if (noise) {
@@ -126,7 +129,7 @@ const two = () => {
   blueField.style.backgroundColor = "blue";
 };
 
-//--------------------------if three is the next field this function is running,  playing the sound and changing the color of the field to a lighter yellow
+//--------------------------if three is the next item in the order array then this function is running,  playing the sound and changing the color of the field to a lighter yellow
 
 const three = () => {
   if (noise) {
@@ -137,7 +140,7 @@ const three = () => {
   yellowField.style.backgroundColor = "#e8ff99";
 };
 
-//--------------------------if four is the next field this function is running,  playing the sound and changing the color of the field to a lighter green
+//--------------------------if four is the next item in the order array then this function is running,  playing the sound and changing the color of the field to a lighter green
 
 const four = () => {
   if (noise) {
@@ -166,7 +169,7 @@ const flashColor = () => {
   greenField.style.backgroundColor = "#6aff4c";
 };
 
-/*-----------------------This function pushes the number 1 into the playerOrder array then goes on to check function then 
+/*-----------------------On click this function pushes the number 1 into the playerOrder array then goes on to check function then 
       if its good goes on to one() function*/
 
 redField.addEventListener('click', (event) => {
@@ -182,7 +185,7 @@ redField.addEventListener('click', (event) => {
   }
 });
 
-/*-----------------------This function pushes the number 2 into the playerOrder array then goes on to check function
+/*-----------------------On click this function pushes the number 2 into the playerOrder array then goes on to check function
       then if its good goes on to two() function*/
 
 
@@ -199,7 +202,7 @@ blueField.addEventListener('click', (event) => {
   }
 });
 
-/*-----------------------This function pushes the number 3 into the playerOrder array then goes on to check function
+/*-----------------------On click this function pushes the number 3 into the playerOrder array then goes on to check function
       then if its good goes on to three() function */
 yellowField.addEventListener('click', (event) => {
   if (on) {
@@ -214,7 +217,7 @@ yellowField.addEventListener('click', (event) => {
   }
 });
 
-/*-----------------------This function pushes the number 4 into the playerOrder array then goes on to check function
+/*-----------------------On click this function pushes the number 4 into the playerOrder array then goes on to check function
       then if its good goes on to four() function */
 greenField.addEventListener('click', (event) => {
   if (on) {
@@ -235,14 +238,17 @@ const check = () => {
   //Checks if the playerOrder is the same as the order
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
+    
   //Checks if the playedOrder length is 30 AND good, if it is then its a won game
   if (playerOrder.length == 30 && good) {
     winGame();
   }
+  
   // This happens if the order in no good
   if (good == false) {
     on = false;
     flashColor();
+    // Decreases the lifes
     lifesLeft--;
     lifes.innerHTML = lifesLeft;
     //Checks if there are lifes left
@@ -289,8 +295,10 @@ const winGame = () => {
 scores , in case of loosing the game shows the highest achived score.*/
 
 const gameOver = () => {
+  //If the actual player has allready played his score is assigned to thisGameResult 
   thisGameResult = localStorage.getItem(player);
   thisGameResult = Number(thisGameResult);
+  // If the new score is greater then the old one or there was no score the new score is assigned to the actual player name in the local storage
   if (turn > thisGameResult || localStorage.getItem(player) == null) {
     localStorage.setItem(player, turn);
   }
@@ -309,6 +317,7 @@ const gameOver = () => {
 const restart = () => {
   let restartGame = document.getElementById("restart");
   restartGame.style.display = "inline-table";
+  // On click restarts the game with 3 lifes.
   restartGame.addEventListener("click", (event) => {
     clearInterval(intervalId);
     play();
