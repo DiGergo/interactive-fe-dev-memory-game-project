@@ -8,7 +8,7 @@ let lifes = document.querySelector("#lifes-left");
 let lifesLeft;
 let order = [];
 let playerOrder = [];
-let flash; //lifes
+let flash; 
 let turn;
 let good;
 let compTurn;
@@ -104,7 +104,7 @@ const gameTurn = () => {
   }
 };
 
-//--------------------------if one is the next field this function is running
+//--------------------------if one is the next field this function is running, playing the sound and changing the color of the field to red
 
 const one =() => {
   if (noise) {
@@ -115,7 +115,7 @@ const one =() => {
   redField.style.backgroundColor = "red";
 };
 
-//--------------------------if two is the next field this function is running
+//--------------------------if two is the next field this function is running,  playing the sound and changing the color of the field to blue
 
 const two = () => {
   if (noise) {
@@ -126,7 +126,7 @@ const two = () => {
   blueField.style.backgroundColor = "blue";
 };
 
-//--------------------------if three is the next field this function is running
+//--------------------------if three is the next field this function is running,  playing the sound and changing the color of the field to a lighter yellow
 
 const three = () => {
   if (noise) {
@@ -137,7 +137,7 @@ const three = () => {
   yellowField.style.backgroundColor = "#e8ff99";
 };
 
-//--------------------------if four is the next field this function is running
+//--------------------------if four is the next field this function is running,  playing the sound and changing the color of the field to a lighter green
 
 const four = () => {
   if (noise) {
@@ -166,13 +166,14 @@ const flashColor = () => {
   greenField.style.backgroundColor = "#6aff4c";
 };
 
-//-----------------------This function pushes the number 1 into the playerOrder array then goes on to check function
+/*-----------------------This function pushes the number 1 into the playerOrder array then goes on to check function then 
+      if its good goes on to one() function*/
 
 redField.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(1);
     check();
-    one();
+    one();  
     if (!win) {
       setTimeout(() => {
         clearColor();
@@ -181,7 +182,9 @@ redField.addEventListener('click', (event) => {
   }
 });
 
-//-----------------------This function pushes the number 2 into the playerOrder array then goes on to check function
+/*-----------------------This function pushes the number 2 into the playerOrder array then goes on to check function
+      then if its good goes on to two() function*/
+
 
 blueField.addEventListener('click', (event) => {
   if (on) {
@@ -196,8 +199,8 @@ blueField.addEventListener('click', (event) => {
   }
 });
 
-//-----------------------This function pushes the number 3 into the playerOrder array then goes on to check function
-
+/*-----------------------This function pushes the number 3 into the playerOrder array then goes on to check function
+      then if its good goes on to three() function */
 yellowField.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(3);
@@ -211,8 +214,8 @@ yellowField.addEventListener('click', (event) => {
   }
 });
 
-//-----------------------This function pushes the number 4 into the playerOrder array then goes on to check function
-
+/*-----------------------This function pushes the number 4 into the playerOrder array then goes on to check function
+      then if its good goes on to four() function */
 greenField.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(4);
@@ -232,7 +235,7 @@ const check = () => {
   //Checks if the playerOrder is the same as the order
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
-  //Checks if the playedOrder length is 50 AND good
+  //Checks if the playedOrder length is 30 AND good, if it is then its a won game
   if (playerOrder.length == 30 && good) {
     winGame();
   }
@@ -244,10 +247,11 @@ const check = () => {
     lifes.innerHTML = lifesLeft;
     //Checks if there are lifes left
     setTimeout(() => {
+      //If there are no lifes left the game is over
       if (lifesLeft === 0) {
         gameOver();
         restart();
-      }
+      } //If there are lifes left computer starts flashing the colors from the previous mistake
       else {
         clearColor();
         compTurn = true;
@@ -259,7 +263,7 @@ const check = () => {
     }, 700);
     noise = false;
   }
-  //If all the clicks were good but didn't win yet
+  //If all the clicks were good but didn't win yet, the computer goes on to the "next level"
   if (turn == playerOrder.length && good && !win) {
     turn++;
     playerOrder = [];

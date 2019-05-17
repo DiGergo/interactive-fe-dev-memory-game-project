@@ -31,31 +31,42 @@ during the building process I figured that it looks much better like this.
 
 ### Functionality
 
-..* The game starts by the user pressing the new game button.
-..* The player is promted to enter his name. In case he has played before his previous highscore will be displayed under his name.
-..* The game will generate a random sequence(numbers 1 to 4), each number is asigned to a color.
-..* The user is then required to repeat the displayed sequence correctly by cliking on the relevant colors.
-..* If the sequence is correct the game will replay the pattern with an additional number at the end.
-..* The game ends when the user repeated 30 sequences correctly or lost all his lifes.
-..* Each player starts with 3 lifes. Losing one life every time when the sequence is not maching the game sequence.
+* The game starts by the user pressing the new game button.
+* The player is promted to enter his name. In case he has played before his previous highscore will be displayed under his name.
+* The game will generate a random sequence(numbers 1 to 4), each number is asigned to a color.
+* The user is then required to repeat the displayed sequence correctly by cliking on the relevant colors.
+* If the sequence is correct the game will replay the pattern with an additional number at the end.
+* The game ends when the user repeated 30 sequences correctly or lost all his lifes.
+* Each player starts with 3 lifes. Losing one life every time when the sequence is not maching the game sequence.
 
 ### Existing Features 
 
-..* **Saving hihscores** Using the browsers local storage each players highest score is saved. In case he playes again his previous highscore is displayed.
-..* **Game Logo** , by clicking on it reloads the page.
-..* **Rules** , by clicking on it opens a modal.
-..* **Modal** includes instructions on how to play the game.
-..* **New game button** , promts the player to enter his name and starts the game.
-..* **Score** shows the user his score.
-..* **Lifes left** tells the player how many lifes he has left.
-..* **Gaming table** Contains four different colored parts. The players are only able to click on them when it's
+* **Saving hihscores** Using the browsers local storage each players highest score is saved. In case he playes again his previous highscore is displayed.
+* **Game Logo** , by clicking on it reloads the page.
+* **Rules** , by clicking on it opens a modal.
+* **Modal** includes instructions on how to play the game.
+* **New game button** , promts the player to enter his name and starts the game.
+* **Score** shows the user his score.
+* **Lifes left** tells the player how many lifes he has left.
+* **Gaming table** Contains four different colored parts. The players are only able to click on them when it's
 their turn to repeat the sequence played by the computer.
-..* **Restart button** Only visible when the player lost. By clicking on it the player can start a new game without re-entering his name.
+* **Restart button** Only visible when the player lost. By clicking on it the player can start a new game without re-entering his name.
 
 ### Features left to implement
 
-..* **Leaderboard** Whithout any back-end knowledge I wasn't able to save players name and scores. The best I could do is 
+* **Leaderboard** Whithout any back-end knowledge I wasn't able to save players name and scores. The best I could do is 
 using the local storage to at least show the actual players highscore.
 
-    
+## Technologies Used
+
+* **Figma** I used Figma.com to create the wireframe for my websyte.
+* **HTML** Used HTML to build the structure of the page.
+* **Google Fonts** I used Google Fonts (Schoolbell) font-family, because its an eye catching font and in my opinion its great for a game.
+* **Bootstrap** Used Bootstrap because of its grid system and button.
+* **CSS** Used CSS to add custom styles to the page.
+* **Javascript** Javascript is used to add functionality to the game, the modal is created using javascript.
+* **Jasmine** Jasmine is used for testing some of the game functions.
+* **Git** Used Git to track changes in my source code.
+* **GitHub** I used GitHub to store my project and also to deploy my website.
+
 
