@@ -4,16 +4,22 @@ I created this game inspired by the well known Simon game. Added a few new funct
 main logic of the game is the same. 
 Find out more of the original Simon game here: [Simon Wikipedia](https://en.wikipedia.org/wiki/Simon_(game))
 
+* This game is good for everyone who wants to improve his memory in a simple and fun way.
+* The game is easy to play but it can get really hard once you reached to a certain ammount of clicks.
+* Great way to improve your memory and contenration skills.
+
 ## UX
 
 ### User Stories
     
-..* This game is good for everyone who wants to improve his memory in a simple and fun way.
-..* The game is easy to play but it can get really hard once you reached to a certain ammount of clicks.
-..* Great way to improve your memory and contenration skills.
-..* The game generates a random sequence of numbers, which the players have to repeat exactly the same way.
-..* If the player misses the sequence then loses one of his 3 lifes.
-..* The game is over when the player reached 30 score or loses all his lifes.
+* The game generates a random sequence of numbers, which the players have to repeat exactly the same way.
+* If the player repeated the sequence correctly the game will carry on with one additional step at he end of the sequence.
+* If the player misses the sequence then loses one of his lifes.
+* The game is over when the player reached 30 score or loses all his lifes.
+* The player can see how many lifes he has left.
+* The players score is incremented by one every time he correctly repeats the sequence presented by the game.
+* The player can see his score.
+* In case the player loses all his life he can click on replay button to start a new game or press the New Game button.
 
 ### Research
 
@@ -41,7 +47,7 @@ during the building process I figured that it looks much better like this.
 
 ### Existing Features 
 
-* **Saving hihscores** Using the browsers local storage each players highest score is saved. In case he playes again his previous highscore is displayed.
+* **Saving highscores** Using the browsers local storage each players highest score is saved. In case he playes again his previous highscore is displayed.
 * **Game Logo** , by clicking on it reloads the page.
 * **Rules** , by clicking on it opens a modal.
 * **Modal** includes instructions on how to play the game.
@@ -69,4 +75,39 @@ using the local storage to at least show the actual players highscore.
 * **Git** Used Git to track changes in my source code.
 * **GitHub** I used GitHub to store my project and also to deploy my website.
 
+## Testing
 
+
+
+
+
+
+
+
+## Deployment
+
+
+
+
+
+
+
+
+## Credits
+
+### Content
+
+* I used a tutorial by Beau Carnes on how to build a Simon Game in Javascript for beginners, you can watch it [here](https://www.youtube.com/watch?v=n_ec3eowFLQ&t=3152s).
+I did reuse some of his ideas tailored to my needs to build the main logic of my game, with additional functions which were written by me. The design and layout are only my hands
+work.
+
+### Media
+
+* The sounds for my game were made by a friend because the original Simon game sounds didnt match my notion.
+* The favicon I used is from [Findicons.com](https://findicons.com/) and it was free to use.
+* The restart button is from [iconfinder.com](https://www.iconfinder.com/) and it was free to use.
+
+### Acknowledgements
+
+* I would like to thank **Beau Carnes** for the brilliant tutorial which helped me a lot.
+* A special thanks to my mentor **Seun Owonikoko** for all the help and feedback!
