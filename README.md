@@ -6,7 +6,7 @@ Find out more of the original Simon game here: [Simon Wikipedia](https://en.wiki
 
 * This game is good for everyone who wants to improve his memory in a simple and fun way.
 * The game is easy to play but it can get really hard once you reached to a certain ammount of clicks.
-* Great way to improve your memory and contenration skills.
+* Great way to improve your memory and concentration skills.
 
 ## UX
 
@@ -77,21 +77,48 @@ using the local storage to at least show the actual players highscore.
 
 ## Testing
 
+* During the building of the website manually tested every new functionality using Google Chrome's developer tools.
+* Next to my tests my family assisted in the manual testing of the website, on different mobile phones with different screen sizes.
 
+### Automated testing
 
+* I did create the environment for testing with Jasmine, unfortunately I couldn't test my functions due to lack of knowledge with testing more complicated functions.
 
+### Manual testing results
 
+#### All manual testing results are good and passing
 
+* The game logo reloads the page.
+* "Click here for rules" anchor tag loads the modal with the rules and disapears if the user click anywhere on the page.
+* "New Game" button playes the game 
+    * Generates a random array which is used as the sequence of the game.
+    * If he played before his score is taken from local storage and displayed.
+    * Starts with 3 lifes, 1 score and one color lightened up.
+    * If the player cliks on the right colors and reaches 30 score he wins the game.
+    * The score is assigned to his name is the local storage.
+* If the player clicks on the wrong color
+    * Loses one of his life.
+    * The pattern restarts from the last good sequence.
+    * If the user losed all of his lifes the game is over.
+    * The user can click on restart button, it restarts the game with the same player name.
+    * Clicking on New Game button the user is required to enter his name again.
+* The user is stopped from clicking on any colors while the computer is playing the sequence.
+
+### Interesting bugs
+
+* **Sounds** When the same color lightened up twice it didn't made any sound. First I checked the noise boolean which had to be true in order
+for the sounds to be played. There was no issue. Than I realized my gameTurn function was set to 700 ms and my sound were 1 sec long, so when they had to 
+be played again the noise was still true. I made the sounds shorter (apx. 400ms) and now it's working good.
+
+* **First sound** When playing a new game the first sound is always delayed but after the all the others play in the right time.
+Tried fixing it but couldn't figure it out.
 
 
 ## Deployment
 
-
-
-
-
-
-
+* You can play the game clicking [here!](https://digergo.github.io/interactive-fe-dev-memory-game-project/).
+* I used GitHub pages as the hosting platform for my project.
+    * Using git in my Cloud9 terminal pushed my code into my GitHub repository.
 
 ## Credits
 
@@ -109,5 +136,8 @@ work.
 
 ### Acknowledgements
 
-* I would like to thank **Beau Carnes** for the brilliant tutorial which helped me a lot.
+* I would like to thank **Beau Carnes** for the brilliant tutorial which helped me a lot with my project.
 * A special thanks to my mentor **Seun Owonikoko** for all the help and feedback!
+
+
+# Thank you for visiting my page!
