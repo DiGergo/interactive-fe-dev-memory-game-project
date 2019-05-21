@@ -1,4 +1,4 @@
-# Simon Inspireed Game
+# Simon Inspired Game
 
 I created this game inspired by the well known Simon game. Added a few new functionalities but the 
 main logic of the game is the same. 
@@ -119,6 +119,7 @@ Tried fixing it but couldn't figure it out.
 * You can play the game clicking [here!](https://digergo.github.io/interactive-fe-dev-memory-game-project/).
 * I used GitHub pages as the hosting platform for my project.
     * Using git in my Cloud9 terminal pushed my code into my GitHub repository.
+    * Then used GitHub to host my website.
 
 ## Credits
 
