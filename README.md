@@ -137,7 +137,7 @@ work.
 
 ### Acknowledgements
 
-* I would like to thank **Beau Carnes** for the brilliant tutorial which helped me a lot with my project.
+* I would like to thank **Beau Carnes** for the brilliant tutorial which helped me a lot with my project. You can see his github repo [here](https://github.com/beaucarnes/simon-game).
 * A special thanks to my mentor **Seun Owonikoko** for all the help and feedback!
 
 
